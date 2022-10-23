@@ -72,7 +72,7 @@ namespace Lab3
 
         public IEnumerator<T> GetEnumerator()
         {
-            return new ProductsEnumerator(products);
+            return new ProductsEnumerator<T>(products);
         }
 
         IEnumerator IEnumerable.GetEnumerator()

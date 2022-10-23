@@ -38,10 +38,10 @@ namespace Lab3
                 //Console.WriteLine($"Price of -2th element: {productList[-2].GetPrice()}"); // exception test
                 //Console.WriteLine($"Price of -2th element: {productList[2000].GetPrice()}"); // exception test
 
-                /*foreach (var item in productList)
+                foreach (var item in productList.Where(p => p.GetName()[0] == 'B'))
                 {
                     Console.WriteLine(item);
-                }*/
+                }
             }
             catch (Exception e)
 			{

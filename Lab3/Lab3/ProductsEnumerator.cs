@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Lab3
 {
-    public class ProductsEnumerator : IEnumerator<IProduct>
+    public class ProductsEnumerator<T> : IEnumerator<T> where T : IProduct
     {
-        IProduct[] products;
+        T[] products;
         private int index = -1;
 
-        public ProductsEnumerator(IProduct[] products)
+        public ProductsEnumerator(T[] products)
         {
             this.products = products;
         }
@@ -20,6 +20,8 @@ namespace Lab3
         public IProduct Current => products[index];
 
         object IEnumerator.Current => Current;
+
+        T IEnumerator<T>.Current => products[index];
 
         public void Dispose() { }
 
